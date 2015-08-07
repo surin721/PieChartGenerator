@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>{0}</id>
+    <version>1.0.{1}</version>
+    <authors>{2}</authors>
+    <owners>{2}</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>{3}</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright {4}</copyright>
+	<projectUrl>{5}</projectUrl>
+  </metadata>
+</package>
