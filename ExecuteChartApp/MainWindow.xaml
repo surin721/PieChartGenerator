@@ -1,8 +1,8 @@
 ﻿<Controls:MetroWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-     xmlns:c="clr-namespace:ScottLogic.Controls.PieChart"
-    xmlns:b="clr-namespace:ScottLogic.Shapes"
+        xmlns:c="clr-namespace:ScottLogic.Controls.PieChart"
+        xmlns:b="clr-namespace:ScottLogic.Shapes"
            
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Properties="clr-namespace:PieChartResources.Properties" x:Class="PieChartResources.MainWindow"
