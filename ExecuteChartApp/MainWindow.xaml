@@ -7,7 +7,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Properties="clr-namespace:PieChartResources.Properties" x:Class="PieChartResources.MainWindow"
         Title="Create Pie Chart" Height="516" Width="790">
-    
+
     <Window.Resources>
         <x:ArrayExtension Type="{x:Type Brush}" x:Key="brushes">
             <SolidColorBrush Color="#9F15C3"/>
@@ -68,9 +68,11 @@
         </Border>
         <Button Content="Generate" Grid.Column="1" HorizontalAlignment="Left" Margin="35,438,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.267,0.36" Click="Button_Click_2"/>
         <Button Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="131,438,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.267,0.36" Click="Button_Click_1"/>
-        
-        
-        <Grid Grid.Column="2" HorizontalAlignment="Left" Height="466" Margin="10,10,0,0" VerticalAlignment="Top" Width="500"/>
+
+
+        <Grid Grid.Column="2" HorizontalAlignment="Left" Height="466" Margin="10,10,0,0" VerticalAlignment="Top" Width="500">
+            <StackPanel HorizontalAlignment="Left" Height="466" VerticalAlignment="Top" Width="500"/>
+        </Grid>
         <c:PieChartLayout HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"
                               x:Name="piePlotter" PlottedProperty="Value" Margin="10">
             <c:PieChartLayout.ColorSelector>
