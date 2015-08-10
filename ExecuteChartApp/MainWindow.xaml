@@ -66,7 +66,6 @@
             </DataGrid>
 
         </Border>
-        <Button Content="Generate" Grid.Column="1" HorizontalAlignment="Left" Margin="35,438,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.267,0.36" Click="Button_Click_2"/>
         <Button Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="131,438,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.267,0.36" Click="Button_Click_1"/>
 
 
@@ -75,9 +74,9 @@
             <StackPanel HorizontalAlignment="Left" Height="427" VerticalAlignment="Top" Width="470" Margin="21,30,-28,-45">
                 <!--<c:PiePlotter PlottedProperty="Value" Width="430" Height="430"/>-->
                 <c:PiePlotter PlottedProperty="Value" Height="397" Width="397" HoleSize="0.25">
-                    <c:PieChartLayout.ColorSelector>
+                    <c:PiePlotter.ColorSelector>
                         <c:IndexedColourSelector Brushes="{StaticResource brushes}"/>
-                    </c:PieChartLayout.ColorSelector>
+                    </c:PiePlotter.ColorSelector>
                 </c:PiePlotter>
 
                 <!--<c:PiePlotter PlottedProperty="Value" Width="430" Height="430"/>-->

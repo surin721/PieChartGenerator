@@ -85,14 +85,8 @@ namespace PieChartResources
             this.Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            //! Draw graph
-            // Refer graph project to get idea how to connect.
-
-        }
-
-      
+       
+       
 
     }
 

@@ -116,16 +116,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ScottLogic\BaseWPFHelpers.cs" />
-    <Compile Include="ScottLogic\PieChart\ColourConverter.cs" />
     <Compile Include="ScottLogic\PieChart\IColorSelector.cs" />
     <Compile Include="ScottLogic\PieChart\IndexedColourSelector.cs" />
-    <Compile Include="ScottLogic\PieChart\Legend.xaml.cs">
-      <DependentUpon>Legend.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ScottLogic\PieChart\LegendConverter.cs" />
-    <Compile Include="ScottLogic\PieChart\PieChartLayout.xaml.cs">
-      <DependentUpon>PieChartLayout.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ScottLogic\PieChart\PiePlotter.xaml.cs">
       <DependentUpon>PiePlotter.xaml</DependentUpon>
     </Compile>
@@ -145,14 +137,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\Icons.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ScottLogic\PieChart\Legend.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ScottLogic\PieChart\PieChartLayout.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

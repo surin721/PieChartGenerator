@@ -31,13 +31,17 @@ namespace ScottLogic.Controls.PieChart
 
         #region dependency properties
 
+        /////////////////////////////////////////////////////////////////////////////
+        //DependencyObject properties are imported from PieChartLayout.cs
+        /////////////////////////////////////////////////////////////////////////////
+
         /// <summary>
         /// The property of the bound object that will be plotted
         /// </summary>
         public String PlottedProperty
         {
-            get { return PieChartLayout.GetPlottedProperty(this); }
-            set { PieChartLayout.SetPlottedProperty(this, value); }
+            get { return GetPlottedProperty(this); }
+            set { SetPlottedProperty(this, value); }
         }
 
         /// <summary>
@@ -45,11 +49,39 @@ namespace ScottLogic.Controls.PieChart
         /// </summary>
         public IColorSelector ColorSelector
         {
-            get { return PieChartLayout.GetColorSelector(this); }
-            set { PieChartLayout.SetColorSelector(this, value); }
+            get { return PiePlotter.GetColorSelector(this); }
+            set { PiePlotter.SetColorSelector(this, value); }
         }
 
+        // ColorSelector dependency property
+        public static readonly DependencyProperty ColorSelectorProperty =
+                       DependencyProperty.RegisterAttached("ColorSelectorProperty", typeof(IColorSelector), typeof(PiePlotter),
+                       new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
+        // ColorSelector attached property accessors
+        public static void SetColorSelector(UIElement element, IColorSelector value)
+        {
+            element.SetValue(ColorSelectorProperty, value);
+        }
+        public static IColorSelector GetColorSelector(UIElement element)
+        {
+            return (IColorSelector)element.GetValue(ColorSelectorProperty);
+        }
+
+        // PlottedProperty dependency property
+        public static readonly DependencyProperty PlottedPropertyProperty =
+                       DependencyProperty.RegisterAttached("PlottedProperty", typeof(String), typeof(PiePlotter),
+                       new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.Inherits));
+
+        public static String GetPlottedProperty(UIElement element)
+        {
+            return (String)element.GetValue(PlottedPropertyProperty);
+        }
+
+        public static void SetPlottedProperty(UIElement element, String value)
+        {
+            element.SetValue(PlottedPropertyProperty, value);
+        }
         /// <summary>
         /// The size of the hole in the centre of circle (as a percentage)
         /// </summary>
@@ -80,7 +112,7 @@ namespace ScottLogic.Controls.PieChart
         public PiePlotter()
         {
             // register any dependency property change handlers
-            DependencyPropertyDescriptor dpd = DependencyPropertyDescriptor.FromProperty(PieChartLayout.PlottedPropertyProperty, typeof(PiePlotter));
+            DependencyPropertyDescriptor dpd = DependencyPropertyDescriptor.FromProperty(PiePlotter.PlottedPropertyProperty, typeof(PiePlotter));
             dpd.AddValueChanged(this, PlottedPropertyChanged);
 
             InitializeComponent();
