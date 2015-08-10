@@ -63,6 +63,7 @@ namespace ScottLogic.Controls.PieChart
         {
             element.SetValue(ColorSelectorProperty, value);
         }
+
         public static IColorSelector GetColorSelector(UIElement element)
         {
             return (IColorSelector)element.GetValue(ColorSelectorProperty);
@@ -73,6 +74,7 @@ namespace ScottLogic.Controls.PieChart
                        DependencyProperty.RegisterAttached("PlottedProperty", typeof(String), typeof(PiePlotter),
                        new FrameworkPropertyMetadata("", FrameworkPropertyMetadataOptions.Inherits));
 
+        // PlottedProperty attached property accessors
         public static String GetPlottedProperty(UIElement element)
         {
             return (String)element.GetValue(PlottedPropertyProperty);
@@ -82,6 +84,7 @@ namespace ScottLogic.Controls.PieChart
         {
             element.SetValue(PlottedPropertyProperty, value);
         }
+
         /// <summary>
         /// The size of the hole in the centre of circle (as a percentage)
         /// </summary>
