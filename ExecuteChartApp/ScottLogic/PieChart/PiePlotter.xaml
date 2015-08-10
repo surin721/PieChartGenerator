@@ -42,17 +42,17 @@
                                     Text="{Binding Path=Percentage, Converter={StaticResource formatter}, ConverterParameter='\{0:0%\}'}"/>
                     
                             <StackPanel Orientation="Vertical">                                  
-                                <TextBlock FontWeight="Bold"  Text="{Binding Path=Class}"/>
+                                <TextBlock FontWeight="Bold"  Text="{Binding Path=Parameter}"/>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Fund"/>                               
+                                    <TextBlock Text="Value"/>                               
                                     <TextBlock Text=": "/>
-                                    <TextBlock Text="{Binding Path=Fund}"/>
+                                    <TextBlock Text="{Binding Path=Value}"/>
                                 </StackPanel>
-                                <StackPanel Orientation="Horizontal">
+                                <!--<StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Benchmark"/>                               
                                     <TextBlock Text=": "/>
                                     <TextBlock Text="{Binding Path=Benchmark}"/>
-                                </StackPanel>
+                                </StackPanel>-->
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
