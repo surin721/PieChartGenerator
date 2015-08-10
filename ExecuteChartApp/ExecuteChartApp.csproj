@@ -162,7 +162,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ObservableCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
