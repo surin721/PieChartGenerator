@@ -71,18 +71,19 @@
 
 
         <Grid Grid.Column="2" HorizontalAlignment="Left" Height="466" Margin="10,10,0,0" VerticalAlignment="Top" Width="500">
-           
-            <StackPanel HorizontalAlignment="Left" Height="466" VerticalAlignment="Top" Width="500">
-               
+
+            <StackPanel HorizontalAlignment="Left" Height="427" VerticalAlignment="Top" Width="470" Margin="21,30,-28,-45">
                 <!--<c:PiePlotter PlottedProperty="Value" Width="430" Height="430"/>-->
-                <c:PiePlotter PlottedProperty="Value" Width="460" Height="460">
+                <c:PiePlotter PlottedProperty="Value" Height="397" Width="397" HoleSize="0.25">
                     <c:PieChartLayout.ColorSelector>
                         <c:IndexedColourSelector Brushes="{StaticResource brushes}"/>
                     </c:PieChartLayout.ColorSelector>
                 </c:PiePlotter>
+
+                <!--<c:PiePlotter PlottedProperty="Value" Width="430" Height="430"/>-->
             </StackPanel>
         </Grid>
-       
+
 
 
     </Grid>
