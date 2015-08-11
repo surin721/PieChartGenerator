@@ -77,6 +77,10 @@
       <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net40\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PieChartApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PieChartApp\PieChartApp\bin\Debug\PieChartApp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
@@ -101,15 +105,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ScottLogic\BaseWPFHelpers.cs" />
-    <Compile Include="ScottLogic\PieChart\IColorSelector.cs" />
-    <Compile Include="ScottLogic\PieChart\IndexedColourSelector.cs" />
-    <Compile Include="ScottLogic\PieChart\PiePlotter.xaml.cs">
-      <DependentUpon>PiePlotter.xaml</DependentUpon>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ScottLogic\Shapes\PiePiece.cs" />
-    <Compile Include="ScottLogic\Util\FormattingConverter.cs" />
-    <Compile Include="ScottLogic\Util\Utils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,9 +124,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ScottLogic\PieChart\PiePlotter.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
