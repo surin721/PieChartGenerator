@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="clr-namespace:ScottLogic.Controls.PieChart;assembly=PieChartApp"
         xmlns:b="clr-namespace:ScottLogic.Shapes;assembly=PieChartApp"
-        xmlns:localization="clr-namespace:PieChartResources.Strings"  
+        xmlns:p="clr-namespace:PieChartResources.Resources"  
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Properties="clr-namespace:PieChartResources.Properties" x:Class="PieChartResources.MainWindow"
-        Title="{x:Static localization:Strings_en.titlebar_string}" Height="540" Width="823">
+        Title="{x:Static p:English.titlebar_string}" Height="540" Width="823">
 
     <Window.Resources>
         <x:ArrayExtension Type="{x:Type Brush}" x:Key="brushes">
@@ -44,13 +44,13 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="auto" Margin="26,26,0,0" VerticalAlignment="Top" MinWidth="200">
                 <StackPanel Orientation="Horizontal" Margin="5">
 
-                    <Label Content="{x:Static localization:Strings_en.parameter_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+                    <Label Content="{x:Static p:English.parameter_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
                     <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Parameter" TextChanged="TextBox_TextChanged"/>
 
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <Label Content="{x:Static localization:Strings_en.value_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+                    <Label Content="{x:Static p:English.value_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
                     <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Value" TextChanged="TextBox_TextChanged_1" />
                 </StackPanel>
 
@@ -65,10 +65,10 @@
             <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" >
                 <DataGrid AutoGenerateColumns="False" x:Name="Table" ItemsSource="{Binding}" BorderThickness="2" IsSynchronizedWithCurrentItem="True" MinHeight="230" Width="auto" VerticalAlignment="Top" Margin="10" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="{x:Static localization:Strings_en.parameter_str}" IsReadOnly="True" Binding="{Binding Parameter}" MinWidth="120">
+                        <DataGridTextColumn Header="{x:Static p:English.parameter_str}" IsReadOnly="True" Binding="{Binding Parameter}" MinWidth="120">
                          
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="{x:Static localization:Strings_en.value_str}" IsReadOnly="True" Binding="{Binding Value}" MinWidth="100">
+                        <DataGridTextColumn Header="{x:Static p:English.value_str}" IsReadOnly="True" Binding="{Binding Value}" MinWidth="100">
                            
 
                         </DataGridTextColumn>

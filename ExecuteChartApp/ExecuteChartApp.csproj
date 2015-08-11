@@ -79,7 +79,7 @@
     </Reference>
     <Reference Include="PieChartApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\PieChartApp\PieChartApp\bin\Debug\PieChartApp.dll</HintPath>
+      <HintPath>..\..\PieChartLibrary\PieChartApp\bin\Debug\PieChartApp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -105,10 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Localization\Strings_en.Designer.cs">
+    <Compile Include="Resources\English.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Strings_en.resx</DependentUpon>
+      <DependentUpon>English.resx</DependentUpon>
     </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
@@ -152,9 +152,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Localization\Strings_en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings_en.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Resources\English.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>English.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ExecuteChartApp_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -194,6 +194,7 @@
   <ItemGroup>
     <Resource Include="chart_icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -42,7 +42,7 @@ namespace PieChartResources
             {
                 if (Parameter.Text == "")
                 {
-                    ErrorMessage.Content = "Parameter cannot be empty.";
+                    ErrorMessage.Content = PieChartResources.Resources.English.param_err_msg;
                 }
                 else
                 {
@@ -56,8 +56,8 @@ namespace PieChartResources
             }
             catch (Exception)
             {
-                
-                    ErrorMessage.Content = ErrorMessage.Content + "Value is a Number.";
+
+                ErrorMessage.Content = ErrorMessage.Content + PieChartResources.Resources.English.val_err;
                     Value.Clear();
                 
                 

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PieChartResources.Strings {
+namespace PieChartResources.Resources {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace PieChartResources.Strings {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings_en {
+    public class English {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Strings_en() {
+        internal English() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PieChartResources.Localization.Strings_en", typeof(Strings_en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PieChartResources.Resources.English", typeof(English).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace PieChartResources.Strings {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace PieChartResources.Strings {
         /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
-        internal static string add {
+        public static string add {
             get {
                 return ResourceManager.GetString("add", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace PieChartResources.Strings {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string cancel {
+        public static string cancel {
             get {
                 return ResourceManager.GetString("cancel", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace PieChartResources.Strings {
         /// <summary>
         ///   Looks up a localized string similar to Parameter cannot be empty..
         /// </summary>
-        internal static string param_err_msg {
+        public static string param_err_msg {
             get {
                 return ResourceManager.GetString("param_err_msg", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace PieChartResources.Strings {
         /// <summary>
         ///   Looks up a localized string similar to Parameter.
         /// </summary>
-        internal static string parameter_str {
+        public static string parameter_str {
             get {
                 return ResourceManager.GetString("parameter_str", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace PieChartResources.Strings {
         /// <summary>
         ///   Looks up a localized string similar to Create Pie Chart.
         /// </summary>
-        internal static string titlebar_string {
+        public static string titlebar_string {
             get {
                 return ResourceManager.GetString("titlebar_string", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace PieChartResources.Strings {
         /// <summary>
         ///   Looks up a localized string similar to Value is a Number..
         /// </summary>
-        internal static string val_err {
+        public static string val_err {
             get {
                 return ResourceManager.GetString("val_err", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace PieChartResources.Strings {
         /// <summary>
         ///   Looks up a localized string similar to Value.
         /// </summary>
-        internal static string value_str {
+        public static string value_str {
             get {
                 return ResourceManager.GetString("value_str", resourceCulture);
             }
