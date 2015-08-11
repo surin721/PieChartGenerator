@@ -8,6 +8,7 @@
         xmlns:Properties="clr-namespace:PieChartResources.Properties" x:Class="PieChartResources.MainWindow"
         Title="{x:Static p:English.titlebar_string}" Height="540" Width="823">
 
+    <!--Color resources for pie chart.-->
     <Window.Resources>
         <x:ArrayExtension Type="{x:Type Brush}" x:Key="brushes">
             <SolidColorBrush Color="#9F15C3"/>
@@ -19,34 +20,32 @@
         </x:ArrayExtension>
     </Window.Resources>
 
-
+    <!--Settings for application. not implemented yet - suggested : localization change-->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button Content="settings" />
+            <Button Content="{x:Static p:English.settings_menu}" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
 
+    <!--Grid Definition-->
     <Grid  Margin="15">
         <Grid.ColumnDefinitions>
-
             <ColumnDefinition Width="auto" MinWidth="260" />
             <ColumnDefinition />
-
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
 
+        <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1" CornerRadius="2"/>
 
-        <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1" CornerRadius="2" />
+        <!--Left side pane-->
         <StackPanel Orientation="Vertical" Grid.Row="0">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="auto" Margin="26,26,0,0" VerticalAlignment="Top" MinWidth="200">
-                <StackPanel Orientation="Horizontal" Margin="5">
 
+                <StackPanel Orientation="Horizontal" Margin="5">
                     <Label Content="{x:Static p:English.parameter_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
                     <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Parameter" TextChanged="TextBox_TextChanged"/>
-
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
@@ -55,42 +54,48 @@
                 </StackPanel>
 
             </StackPanel>
+
             <Label Content="" Height="34" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Foreground="#FF9C2323" x:Name="ErrorMessage" Background="{x:Null}" FontStyle="Italic" />
 
-            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
-                <Button Content="Add" HorizontalAlignment="Right" Width="88" Click="Button_Click"/>
-
-
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+                <Button Content="{x:Static p:English.add}" HorizontalAlignment="Right" Width="88" Click="Button_Click"/>
             </StackPanel>
+
             <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" >
-                <DataGrid AutoGenerateColumns="False" x:Name="Table" ItemsSource="{Binding}" BorderThickness="2" IsSynchronizedWithCurrentItem="True" MinHeight="230" Width="auto" VerticalAlignment="Top" Margin="10" >
+                <!--datagrid-->
+                <DataGrid AutoGenerateColumns="False" x:Name="Table" ItemsSource="{Binding}" BorderThickness="2" IsSynchronizedWithCurrentItem="True" MinHeight="230" Width="auto" VerticalAlignment="Top" Margin="15" >
+
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="{x:Static p:English.parameter_str}" IsReadOnly="True" Binding="{Binding Parameter}" MinWidth="120">
-                         
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="{x:Static p:English.value_str}" IsReadOnly="True" Binding="{Binding Value}" MinWidth="100">
-                           
-
-                        </DataGridTextColumn>
-
+                        <DataGridTextColumn Header="{x:Static p:English.parameter_str}" IsReadOnly="True" Binding="{Binding Parameter}" MinWidth="120"/>
+                        <DataGridTextColumn Header="{x:Static p:English.value_str}" IsReadOnly="True" Binding="{Binding Value}" MinWidth="100"/>
                     </DataGrid.Columns>
+
                 </DataGrid>
+
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
-                <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+                <Button Content="{x:Static p:English.cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
             </StackPanel>
 
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Column="3" Width="auto">
-            
-            <c:PiePlotter PlottedProperty="Value" Height="400" Width="400" Margin="40" HoleSize="0.25">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1" Width="auto">
+            <!--PiePlotter-->
+            <c:PiePlotter PlottedProperty="Value" Height="400" Width="400" VerticalAlignment="Center" HorizontalAlignment="Center" HoleSize="0.25" >
+                <c:PiePlotter.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.213"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.743"/>
+                    </TransformGroup>
+                </c:PiePlotter.RenderTransform>
                 <c:PiePlotter.ColorSelector>
                     <c:IndexedColourSelector Brushes="{StaticResource brushes}"/>
                 </c:PiePlotter.ColorSelector>
             </c:PiePlotter>
         </StackPanel>
-
 
     </Grid>
 </Controls:MetroWindow>

@@ -129,6 +129,9 @@
   <data name="param_err_msg" xml:space="preserve">
     <value>Parameter cannot be empty.</value>
   </data>
+  <data name="settings_menu" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="titlebar_string" xml:space="preserve">
     <value>Create Pie Chart</value>
   </data>
