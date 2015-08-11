@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="clr-namespace:ScottLogic.Controls.PieChart;assembly=PieChartApp"
         xmlns:b="clr-namespace:ScottLogic.Shapes;assembly=PieChartApp"
-           
+        xmlns:localization="clr-namespace:PieChartResources.Strings"  
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Properties="clr-namespace:PieChartResources.Properties" x:Class="PieChartResources.MainWindow"
-        Title="Create Pie Chart" Height="540" Width="823">
+        Title="{x:Static localization:Strings_en.titlebar_string}" Height="540" Width="823">
 
     <Window.Resources>
         <x:ArrayExtension Type="{x:Type Brush}" x:Key="brushes">
@@ -41,21 +41,21 @@
 
         <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1" CornerRadius="2" />
         <StackPanel Orientation="Vertical" Grid.Row="0">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="81" Margin="26,26,0,0" VerticalAlignment="Top" MinWidth="200">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Height="auto" Margin="26,26,0,0" VerticalAlignment="Top" MinWidth="200">
                 <StackPanel Orientation="Horizontal" Margin="5">
 
-                    <Label Content="Parameter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74"/>
-                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="103" x:Name="Parameter" TextChanged="TextBox_TextChanged"/>
+                    <Label Content="{x:Static localization:Strings_en.parameter_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Parameter" TextChanged="TextBox_TextChanged"/>
 
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <Label Content="Value" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74"/>
-                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="103" x:Name="Value" TextChanged="TextBox_TextChanged_1" />
+                    <Label Content="{x:Static localization:Strings_en.value_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Value" TextChanged="TextBox_TextChanged_1" />
                 </StackPanel>
 
             </StackPanel>
-            <Label Content="" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center" Width="198" Foreground="#FF9C2323" x:Name="ErrorMessage" Background="{x:Null}" FontStyle="Italic"  TextOptions.TextFormattingMode="Display"/>
+            <Label Content="" Height="34" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Foreground="#FF9C2323" x:Name="ErrorMessage" Background="{x:Null}" FontStyle="Italic" />
 
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
                 <Button Content="Add" HorizontalAlignment="Right" Width="88" Click="Button_Click"/>
@@ -63,22 +63,13 @@
 
             </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" >
-                <DataGrid AutoGenerateColumns="False" x:Name="Table" CanUserAddRows="True" ItemsSource="{Binding}" TextElement.Foreground="Black" BorderThickness="2" IsSynchronizedWithCurrentItem="True" Background="White" Foreground="Black"  MinHeight="230" VerticalAlignment="Top" Margin="10" >
+                <DataGrid AutoGenerateColumns="False" x:Name="Table" ItemsSource="{Binding}" BorderThickness="2" IsSynchronizedWithCurrentItem="True" MinHeight="230" Width="auto" VerticalAlignment="Top" Margin="10" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Parameter" IsReadOnly="True" Binding="{Binding Parameter}" Width="118" Foreground="Black">
-                            <!--<DataGridTextColumn.CellStyle>
-                            <Style TargetType="DataGridCell">
-                                <Setter Property="ToolTip" Value="{Binding Parameter}" />
-                            </Style>
-                        </DataGridTextColumn.CellStyle>-->
-
+                        <DataGridTextColumn Header="{x:Static localization:Strings_en.parameter_str}" IsReadOnly="True" Binding="{Binding Parameter}" MinWidth="120">
+                         
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Value" IsReadOnly="True" Binding="{Binding Value}" Width="117" Foreground="Black">
-                            <!--<DataGridTextColumn.CellStyle>
-                            <Style TargetType="DataGridCell">
-                                <Setter Property="ToolTip" Value="{Binding Value}" />
-                            </Style>
-                        </DataGridTextColumn.CellStyle>-->
+                        <DataGridTextColumn Header="{x:Static localization:Strings_en.value_str}" IsReadOnly="True" Binding="{Binding Value}" MinWidth="100">
+                           
 
                         </DataGridTextColumn>
 
@@ -92,6 +83,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Column="3" Width="auto">
+            
             <c:PiePlotter PlottedProperty="Value" Height="400" Width="400" Margin="40" HoleSize="0.25">
                 <c:PiePlotter.ColorSelector>
                     <c:IndexedColourSelector Brushes="{StaticResource brushes}"/>
