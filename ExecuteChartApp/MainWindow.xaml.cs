@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using PieChartResources.Resources;
 
 
 namespace PieChartResources
@@ -25,8 +26,8 @@ namespace PieChartResources
 
     public partial class MainWindow : MetroWindow
     {
-        ObservableCollection<MyCollection> dataCollection = new ObservableCollection<MyCollection>();
-        public ObservableCollection<MyCollection> DataCollection { get { return dataCollection; } }
+        ObservableCollection<PieChartDataCollection> dataCollection = new ObservableCollection<PieChartDataCollection>();
+        public ObservableCollection<PieChartDataCollection> DataCollection { get { return dataCollection; } }
 
         public MainWindow()
         {
@@ -35,7 +36,7 @@ namespace PieChartResources
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void add_clicked(object sender, RoutedEventArgs e)
         {
             ErrorMessage.Content = "";
             try
@@ -46,7 +47,7 @@ namespace PieChartResources
                 }
                 else
                 {
-                    dataCollection.Add(new MyCollection(Parameter.Text, Double.Parse(Value.Text)));
+                    dataCollection.Add(new PieChartDataCollection(Parameter.Text, Double.Parse(Value.Text)));
                     this.DataContext = dataCollection;
                     this.InitializeComponent();
                     Parameter.Clear();
@@ -65,22 +66,19 @@ namespace PieChartResources
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void parameter_changed(object sender, TextChangedEventArgs e)
         {
             var parameter = sender as TextBox;
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void value_changed(object sender, TextChangedEventArgs e)
         {
             var value = sender as TextBox;
         }
 
-        private void Datagrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+       
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void cancel_clicked(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -90,13 +88,13 @@ namespace PieChartResources
 
     }
 
-    public class MyCollection
+    public class PieChartDataCollection
     {
        
         public string Parameter { get; set; }
         public double Value { get; set; }
        
-        public MyCollection(string name, double val)
+        public PieChartDataCollection(string name, double val)
         {
             this.Parameter = name;
             this.Value = val;

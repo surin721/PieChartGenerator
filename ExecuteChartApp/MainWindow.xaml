@@ -45,19 +45,19 @@
 
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <Label Content="{x:Static p:English.parameter_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" />
-                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Parameter" TextChanged="TextBox_TextChanged" />
+                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Parameter" TextChanged="parameter_changed" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <Label Content="{x:Static p:English.value_str}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" />
-                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Value" TextChanged="TextBox_TextChanged_1" />
+                    <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="120" x:Name="Value" TextChanged="value_changed" />
                 </StackPanel>
             </StackPanel>
 
             <Label Content="" Height="34" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Foreground="#FF9C2323" x:Name="ErrorMessage" Background="{x:Null}" FontStyle="Italic" />
 
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
-                <Button Content="{x:Static p:English.add}" HorizontalAlignment="Right" Width="88" Click="Button_Click" />
+                <Button Content="{x:Static p:English.add}" HorizontalAlignment="Right" Width="88" Click="add_clicked" />
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
@@ -72,7 +72,7 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
-                <Button Content="{x:Static p:English.cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click_1" />
+                <Button Content="{x:Static p:English.cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="cancel_clicked" />
             </StackPanel>
         </StackPanel>
 
